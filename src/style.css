@@ -1,0 +1,22 @@
+* {
+    font-family: 'Handlee', cursive;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+}
+
+.title {
+    font-size: 2.5rem;
+}
+
+.menu {
+    font-size: 36px;
+}
+
+.logo {
+    font-size: 36px;
+}
