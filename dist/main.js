@@ -110,6 +110,16 @@ eval("\n\n/* istanbul ignore next  */\nfunction styleTagTransform(css, styleElem
 
 /***/ }),
 
+/***/ "./src/components/itemComponent.js":
+/*!*****************************************!*\
+  !*** ./src/components/itemComponent.js ***!
+  \*****************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nfunction createItemComponent(title) {\n  const itemComponent = document.createElement(\"div\");\n  itemComponent.classList.add(\"item-container\");\n  itemComponent.innerHTML = `\n\n        <div class=\"item-title\">${title}</div>\n        <div class=\"item-icons\">\n        <span class=\"material-symbols-outlined\">\n            edit_note\n        </span>\n        <span class=\"material-symbols-outlined\"> delete </span>\n        <span class=\"material-symbols-outlined\"> done </span>\n        </div>\n\n    `;\n  return itemComponent;\n}\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (createItemComponent);\n\n\n//# sourceURL=webpack://todo-list/./src/components/itemComponent.js?");
+
+/***/ }),
+
 /***/ "./src/index.js":
 /*!**********************!*\
   !*** ./src/index.js ***!
@@ -117,6 +127,26 @@ eval("\n\n/* istanbul ignore next  */\nfunction styleTagTransform(css, styleElem
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style.css */ \"./src/style.css\");\n/* harmony import */ var _modules_pageLoad__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/pageLoad */ \"./src/modules/pageLoad.js\");\n\n\n\n(0,_modules_pageLoad__WEBPACK_IMPORTED_MODULE_1__[\"default\"])();\n\n\n//# sourceURL=webpack://todo-list/./src/index.js?");
+
+/***/ }),
+
+/***/ "./src/modules/DomModule.js":
+/*!**********************************!*\
+  !*** ./src/modules/DomModule.js ***!
+  \**********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"displayAllTasks\": () => (/* binding */ displayAllTasks),\n/* harmony export */   \"displayPageTitle\": () => (/* binding */ displayPageTitle)\n/* harmony export */ });\nconst content = document.getElementById(\"content\");\n\nfunction displayPageTitle(title) {\n  const contentTitle = document.createElement(\"div\");\n  contentTitle.classList.add(\"content-title\");\n  contentTitle.innerHTML = title;\n\n  content.appendChild(contentTitle);\n}\n\nfunction displayAllTasks(tasks) {\n  const itemsContainer = document.createElement(\"div\");\n  itemsContainer.classList.add(\"items-container\");\n\n  tasks.forEach((task) => {\n    itemsContainer.appendChild(task.display());\n  });\n  content.appendChild(itemsContainer);\n}\n\n\n\n\n//# sourceURL=webpack://todo-list/./src/modules/DomModule.js?");
+
+/***/ }),
+
+/***/ "./src/modules/itemModule.js":
+/*!***********************************!*\
+  !*** ./src/modules/itemModule.js ***!
+  \***********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ Task),\n/* harmony export */   \"testTasks\": () => (/* binding */ testTasks)\n/* harmony export */ });\n/* harmony import */ var _components_itemComponent__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../components/itemComponent */ \"./src/components/itemComponent.js\");\n\n\nclass Task {\n  constructor(title, description, dueDate, priority) {\n    this.title = title;\n    this.description = description;\n    this.dueDate = dueDate;\n    this.priority = priority;\n  }\n\n  display() {\n    return (0,_components_itemComponent__WEBPACK_IMPORTED_MODULE_0__[\"default\"])(this.title);\n  }\n}\n\nconst testTasks = [];\ntestTasks.push(new Task(\"Get dressed\", \"git gud\", \"1917\", \"high\"));\ntestTasks.push(new Task(\"Git better\", \"git gud\", \"1917\", \"high\"));\n\n\n\n\n//# sourceURL=webpack://todo-list/./src/modules/itemModule.js?");
 
 /***/ }),
 
@@ -136,7 +166,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
   \*******************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nconst content = document.querySelector(\"#content\");\nfunction createHomePage() {\n  const contentTitle = document.createElement(\"div\");\n  contentTitle.innerHTML = `\n    <div class=\"content-title\">Home</div>\n    `;\n\n  const itemModule = document.createElement(\"div\");\n  itemModule.innerHTML = `\n\n    <div class=\"items-container\">\n    <div class=\"item-container\">\n        <div class=\"item-title\">Get dressed</div>\n        <div class=\"item-icons\">\n        <span class=\"material-symbols-outlined\">\n            edit_note\n        </span>\n        <span class=\"material-symbols-outlined\"> delete </span>\n        <span class=\"material-symbols-outlined\"> done </span>\n        </div>\n    </div>\n    <div class=\"item-container\">\n        <div class=\"item-title\">Get dressed</div>\n        <div class=\"item-icons\">\n        <span class=\"material-symbols-outlined\">\n            edit_note\n        </span>\n        <span class=\"material-symbols-outlined\"> delete </span>\n        <span class=\"material-symbols-outlined\"> done </span>\n        </div>\n    </div>\n    </div>\n\n    `;\n\n  content.appendChild(contentTitle);\n  content.appendChild(itemModule);\n}\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (createHomePage);\n\n\n//# sourceURL=webpack://todo-list/./src/pages/homePage.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _modules_DomModule__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../modules/DomModule */ \"./src/modules/DomModule.js\");\n/* harmony import */ var _modules_itemModule__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../modules/itemModule */ \"./src/modules/itemModule.js\");\n\n\n\nfunction displayHomePage() {\n  (0,_modules_DomModule__WEBPACK_IMPORTED_MODULE_0__.displayPageTitle)(\"Home\");\n  (0,_modules_DomModule__WEBPACK_IMPORTED_MODULE_0__.displayAllTasks)(_modules_itemModule__WEBPACK_IMPORTED_MODULE_1__.testTasks);\n}\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (displayHomePage);\n\n\n//# sourceURL=webpack://todo-list/./src/pages/homePage.js?");
 
 /***/ })
 

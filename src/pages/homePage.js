@@ -1,14 +1,12 @@
-import createItemComponent from "../components/itemComponent";
+import {
+  displayAllTasks,
+  displayPageTitle,
+} from "../modules/DomModule";
+import { testTasks } from "../modules/itemModule";
 
-const content = document.querySelector("#content");
-function createHomePage() {
-  const contentTitle = document.createElement("div");
-  contentTitle.innerHTML = `
-    <div class="content-title">Home</div>
-    `;
-
-  content.appendChild(contentTitle);
-  content.appendChild(createItemComponent());
+function displayHomePage() {
+  displayPageTitle("Home");
+  displayAllTasks(testTasks);
 }
 
-export default createHomePage;
+export default displayHomePage;

@@ -1,7 +1,7 @@
-import createHomePage from "../pages/homePage";
+import displayHomePage from "../pages/homePage";
 
 function loadPage() {
-  createHomePage();
+  displayHomePage();
 }
 
 export default loadPage;
