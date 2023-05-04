@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta
       name="viewport"
-      content="width=device-width, initial-scale=1.0"
+      content="width=device-width, initial-scale=1.0, minimum-scale=1"
     />
     <title>doBucket</title>
     <link
@@ -28,17 +28,46 @@
   </head>
   <body>
     <header>
-      <span class="material-symbols-outlined logo">
-        cleaning_bucket
-      </span>
-      <div class="title">doBucket</div>
-      <span class="material-symbols-outlined menu" id="menu">
-        menu
-      </span>
+      <div class="header-container">
+        <span class="material-symbols-outlined logo">
+          cleaning_bucket
+        </span>
+        <div class="title">doBucket</div>
+        <span class="material-symbols-outlined menu" id="menu">
+          menu
+        </span>
+      </div>
     </header>
 
     <main>
       <div class="content" id="content"></div>
+      <span class="material-symbols-outlined" id="add-task">
+        add_circle
+      </span>
+
+      <div class="add-task-container hidden">
+        <form action="#" id="add-task-form">
+          <div class="title-input form-item">
+            <label for="title">Title</label>
+            <input type="text" id="title">
+          </div>
+          <div class="date-input form-item">
+            <label for="date-form-input">Date</label>
+            <input type="date" name="date" id="date-form-input">
+          </div>
+          <div class="project-input form-item">
+            <label for="project-form-input">Project</label>
+            <select name="project" id="project-form-input">
+              <option value="study">study</option>
+              <option value="study">study</option>
+              <option value="study">study</option>
+            </select>
+          </div>
+          <span class="material-symbols-outlined" id="form-add-button">
+            add_circle
+          </span>
+        </form>
+      </div>
     </main>
   </body>
 </html>
