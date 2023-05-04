@@ -1,8 +1,15 @@
 const content = document.getElementById("content");
 const menu = document.getElementById("menu");
+const addTaskButton = document.getElementById("add-task");
+const addTaskForm = document.querySelector(".add-task-container");
 
 menu.addEventListener("click", () => {
   alert("Menu Clicked");
+});
+
+addTaskButton.addEventListener("click", () => {
+  addTaskButton.classList.toggle("clicked");
+  addTaskForm.classList.toggle("hidden");
 });
 
 function displayPageTitle(title) {
