@@ -116,7 +116,27 @@ eval("\n\n/* istanbul ignore next  */\nfunction styleTagTransform(css, styleElem
   \**********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style.css */ \"./src/style.css\");\n\n\n\n//# sourceURL=webpack://todo-list/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style.css */ \"./src/style.css\");\n/* harmony import */ var _modules_pageLoad__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/pageLoad */ \"./src/modules/pageLoad.js\");\n\n\n\n(0,_modules_pageLoad__WEBPACK_IMPORTED_MODULE_1__[\"default\"])();\n\n\n//# sourceURL=webpack://todo-list/./src/index.js?");
+
+/***/ }),
+
+/***/ "./src/modules/pageLoad.js":
+/*!*********************************!*\
+  !*** ./src/modules/pageLoad.js ***!
+  \*********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _pages_homePage__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../pages/homePage */ \"./src/pages/homePage.js\");\n\n\nfunction loadPage() {\n  (0,_pages_homePage__WEBPACK_IMPORTED_MODULE_0__[\"default\"])();\n}\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (loadPage);\n\n\n//# sourceURL=webpack://todo-list/./src/modules/pageLoad.js?");
+
+/***/ }),
+
+/***/ "./src/pages/homePage.js":
+/*!*******************************!*\
+  !*** ./src/pages/homePage.js ***!
+  \*******************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nconst content = document.querySelector(\"#content\");\nfunction createHomePage() {\n  const contentTitle = document.createElement(\"div\");\n  contentTitle.innerHTML = `\n    <div class=\"content-title\">Home</div>\n    `;\n\n  const itemModule = document.createElement(\"div\");\n  itemModule.innerHTML = `\n\n    <div class=\"items-container\">\n    <div class=\"item-container\">\n        <div class=\"item-title\">Get dressed</div>\n        <div class=\"item-icons\">\n        <span class=\"material-symbols-outlined\">\n            edit_note\n        </span>\n        <span class=\"material-symbols-outlined\"> delete </span>\n        <span class=\"material-symbols-outlined\"> done </span>\n        </div>\n    </div>\n    <div class=\"item-container\">\n        <div class=\"item-title\">Get dressed</div>\n        <div class=\"item-icons\">\n        <span class=\"material-symbols-outlined\">\n            edit_note\n        </span>\n        <span class=\"material-symbols-outlined\"> delete </span>\n        <span class=\"material-symbols-outlined\"> done </span>\n        </div>\n    </div>\n    </div>\n\n    `;\n\n  content.appendChild(contentTitle);\n  content.appendChild(itemModule);\n}\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (createHomePage);\n\n\n//# sourceURL=webpack://todo-list/./src/pages/homePage.js?");
 
 /***/ })
 
