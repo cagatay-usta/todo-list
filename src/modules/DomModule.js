@@ -1,4 +1,9 @@
 const content = document.getElementById("content");
+const menu = document.getElementById("menu");
+
+menu.addEventListener("click", () => {
+  alert("Menu Clicked");
+});
 
 function displayPageTitle(title) {
   const contentTitle = document.createElement("div");
