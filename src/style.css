@@ -6,8 +6,16 @@
     --brand-color: #2BD6B7;
 }
 
+html {
+    height: 120vh;
+}
+
+ 
 
 .material-symbols-outlined {
+    cursor: pointer;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
   font-variation-settings:
   'FILL' 0,
   'wght' 200,
@@ -15,18 +23,27 @@
   'opsz' 48
 }
 
-
+/* header */
 header {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(255,255,255,0.9);
+}
+.header-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem;
-    margin-bottom: 1rem;
+    padding: 2rem;
+    padding-top: 1rem; 
+    padding-bottom: 1rem;
 }
 
 .title {
     font-size: 2.5rem;
-    
+    cursor: pointer;
+    user-select: none;
 }
 
 .menu {
@@ -39,13 +56,95 @@ header {
     color: #f5f5f5;
     background-color: var(--brand-color);
     padding: 0.5rem;
+    margin-bottom: 8px;
     border-radius:100%
 }
 
 main {
+    margin-top: 5rem;
     padding: 2rem;
+    display: flex;
+    flex-direction: column;
 }
 
+/* menu and buttons */
+#add-task {
+    position: fixed;
+    top: 80vh;
+    right: 10vw;
+    font-size: 64px;
+    color: var(--brand-color);
+    font-variation-settings: 'FILL' 1, 'opsz' 48;
+    transition: transform ease 1s;
+}
+
+#add-task.clicked {
+    transform: rotate(135deg);
+}
+
+/* new task form */
+.add-task-container {
+    position: fixed;
+    align-self: center;
+    transition: transform ease 0.5s;
+}
+.hidden {
+    transform: scale(0)
+
+}
+#add-task-form {
+    background-color: var(--brand-color);
+    color: white;
+    font-size: 24px;
+    font-weight: 600;
+    border-radius: 1rem;
+    height: 20rem;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: baseline;
+    gap: 1.5rem;
+}
+
+
+
+.form-item {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.form-item.title-input {
+    flex-direction: column;
+    gap: 0;
+}
+input {
+    border: hidden;
+    border-radius: 2px;
+}
+#project-form-input {
+    width: 6rem;
+    text-align: center;
+}
+
+#date-form-input {
+    width: 5.8rem;
+}
+
+#form-add-button {
+    margin-top: auto;
+    margin-right: auto;
+    margin-left: auto;
+    font-size: 48px;
+    font-variation-settings: 'FILL' 1;
+}
+
+
+
+
+/* task items */
 .content-title {
     font-size: 2rem;
     margin-bottom: 2rem;
@@ -71,3 +170,4 @@ main {
     margin-left: auto;
     gap: 1rem;
 }
+
