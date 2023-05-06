@@ -165,6 +165,10 @@ input {
     border-bottom: 1px solid black;
 }
 
+.item-title.crossed {
+    text-decoration: line-through;
+}
+
 .item-icons {
     display: flex;
     margin-left: auto;

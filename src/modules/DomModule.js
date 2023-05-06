@@ -13,6 +13,22 @@ function clearPageContent() {
   }
 }
 
+function deleteClickHandler(button) {
+  button.addEventListener("click", (e) => {
+    const taskContainer = e.target.closest(".item-container");
+    Task.remove(taskContainer.id);
+    taskContainer.remove();
+  });
+}
+
+function doneClickHandler(button) {
+  button.addEventListener("click", () => {
+    button
+      .closest(".item-container")
+      .firstElementChild.classList.toggle("crossed");
+  });
+}
+
 function displayPageTitle(title) {
   const contentTitle = document.createElement("div");
   contentTitle.classList.add("content-title");
@@ -28,6 +44,20 @@ function displayAllTasks(tasks) {
     itemsContainer.appendChild(task.display());
   });
   content.appendChild(itemsContainer);
+
+  // Assign buttons after each display
+  const deleteTaskButtons = document.querySelectorAll(
+    ".delete-item-button"
+  );
+  deleteTaskButtons.forEach((button) => {
+    deleteClickHandler(button);
+  });
+
+  const completeTaskButtons =
+    document.querySelectorAll(".done-button");
+  completeTaskButtons.forEach((button) => {
+    doneClickHandler(button);
+  });
 }
 
 menu.addEventListener("click", () => {

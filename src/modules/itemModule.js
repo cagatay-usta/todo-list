@@ -15,15 +15,15 @@ export default class Task {
   }
 
   display() {
-    return createItemComponent(this.title);
+    return createItemComponent(this);
   }
 
   add() {
     tasks.push(this);
   }
 
-  remove() {
-    const taskIndex = tasks.findIndex((task) => task.id === this.id);
+  static remove(id) {
+    const taskIndex = tasks.findIndex((task) => task.id === Number(id));
     if (taskIndex > -1) {
       tasks.splice(taskIndex, 1);
     }
