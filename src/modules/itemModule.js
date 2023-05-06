@@ -1,20 +1,36 @@
+/* eslint-disable no-unused-vars */
 import createItemComponent from "../components/itemComponent";
 
+const tasks = [];
+
 export default class Task {
-  constructor(title, description, dueDate, priority) {
+  constructor(title, dueDate, description = " ", project = "none") {
     this.title = title;
-    this.description = description;
     this.dueDate = dueDate;
-    this.priority = priority;
+    this.description = description;
+    this.project = project;
+    // set the id to 0 if first, or to +1 of the last item
+    this.id = tasks.length ? +tasks[tasks.length - 1].id + 1 : 0;
+    this.add();
   }
 
   display() {
     return createItemComponent(this.title);
   }
+
+  add() {
+    tasks.push(this);
+  }
+
+  remove() {
+    const taskIndex = tasks.findIndex((task) => task.id === this.id);
+    if (taskIndex > -1) {
+      tasks.splice(taskIndex, 1);
+    }
+  }
 }
 
-const testTasks = [];
-testTasks.push(new Task("Get dressed", "git gud", "1917", "high"));
-testTasks.push(new Task("Git better", "git gud", "1917", "high"));
+const testTask1 = new Task("Get dressed", "1917");
+const testTask2 = new Task("Git better", "1917");
 
-export { testTasks };
+export { tasks };

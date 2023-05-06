@@ -2,11 +2,11 @@ import {
   displayAllTasks,
   displayPageTitle,
 } from "../modules/DomModule";
-import { testTasks } from "../modules/itemModule";
+import { tasks } from "../modules/itemModule";
 
 function displayHomePage() {
   displayPageTitle("Home");
-  displayAllTasks(testTasks);
+  displayAllTasks(tasks);
 }
 
 export default displayHomePage;
