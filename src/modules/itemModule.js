@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 import createItemComponent from "../components/itemComponent";
 
-const tasks = [];
+
 
 export default class Task {
   constructor(title, dueDate, description = " ", project = "none") {
@@ -14,12 +14,13 @@ export default class Task {
     this.add();
   }
 
-  display() {
-    return createItemComponent(this);
+  static display(task) {
+    return createItemComponent(task);
   }
 
   add() {
     tasks.push(this);
+    Task.storeAllItems();
   }
 
   static remove(id) {
@@ -28,9 +29,22 @@ export default class Task {
       tasks.splice(taskIndex, 1);
     }
   }
+
+  static storeAllItems() {
+    window.localStorage.clear();
+    window.localStorage.setItem("localTasks", JSON.stringify(tasks));
+  }
+
+  static retrieveAllItems() {
+    return JSON.parse(window.localStorage.getItem("localTasks"))
+  }
+
+  static clearAllItems() {
+    window.localStorage.clear();
+  }
 }
 
-const testTask1 = new Task("Get dressed", "1917");
-const testTask2 = new Task("Git better", "1917");
+const tasks = Task.retrieveAllItems() || [];
+
 
 export { tasks };

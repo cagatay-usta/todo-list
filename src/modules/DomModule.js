@@ -39,9 +39,9 @@ function displayPageTitle(title) {
 function displayAllTasks(tasks) {
   const itemsContainer = document.createElement("div");
   itemsContainer.classList.add("items-container");
-
   tasks.forEach((task) => {
-    itemsContainer.appendChild(task.display());
+    console.log(task);
+    itemsContainer.appendChild(Task.display(task));
   });
   content.appendChild(itemsContainer);
 
@@ -61,7 +61,8 @@ function displayAllTasks(tasks) {
 }
 
 menu.addEventListener("click", () => {
-  alert("Menu Clicked");
+  // PLACEHOLDER DEBUG
+  Task.clearAllItems()
 });
 
 function displayAddForm() {
