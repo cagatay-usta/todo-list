@@ -2,9 +2,10 @@ function createItemComponent(task) {
   const itemComponent = document.createElement("div");
   itemComponent.classList.add("item-container");
   itemComponent.id = task.id;
+  const isDone = task.done ? "crossed" : "";
   itemComponent.innerHTML = `
 
-        <div class="item-title">${task.title}</div>
+        <div class="item-title ${isDone}">${task.title}</div>
         <div class="item-icons">
         <span class="material-symbols-outlined">
             edit_note

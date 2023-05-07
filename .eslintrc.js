@@ -13,5 +13,6 @@ module.exports = {
     quotes: [2, "double"],
     "comma-dangle": ["off"],
     "import/no-cycle": ["off"],
+    "no-use-before-define": ["off"],
   },
 };
