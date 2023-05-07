@@ -28,6 +28,7 @@ export default class Task {
     if (taskIndex > -1) {
       tasks.splice(taskIndex, 1);
     }
+    Task.storeAllItems();
   }
 
   static storeAllItems() {
