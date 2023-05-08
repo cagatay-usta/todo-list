@@ -1,8 +1,10 @@
 import Task from "./itemModule";
+import Project from "./projectModule";
 import loadPage from "./pageLoad";
 
 const content = document.getElementById("content");
 const menu = document.getElementById("menu");
+const menuContainer = document.querySelector(".menu-container");
 const addTaskButton = document.getElementById("add-task");
 const addTaskForm = document.querySelector(".add-task-container");
 const addTaskFormButton = document.getElementById("form-add-button");
@@ -56,8 +58,16 @@ function displayAllTasks(tasks) {
   });
 }
 
+function displayAllProjects(projects) {
+  projects.forEach((project) => {
+    menuContainer.appendChild(Project.display(project));
+  });
+}
+
 menu.addEventListener("click", () => {
-  // PLACEHOLDER DEBUG
+  const itemsContainer = document.querySelector(".items-container");
+  menuContainer.classList.toggle("menu-open");
+  itemsContainer.classList.toggle("menu-open");
 });
 
 function displayAddForm() {
@@ -88,4 +98,9 @@ addTaskFormButton.addEventListener("click", () => {
   loadPage();
 });
 
-export { displayAllTasks, displayPageTitle, clearPageContent };
+export {
+  displayAllTasks,
+  displayPageTitle,
+  clearPageContent,
+  displayAllProjects,
+};

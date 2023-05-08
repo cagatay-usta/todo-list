@@ -39,7 +39,9 @@ export default class Task {
   }
 
   static storeAllItems() {
-    window.localStorage.clear();
+    if (window.localStorage.getItem("localTasks")) {
+      window.localStorage.removeItem("localTasks");
+    }
     window.localStorage.setItem("localTasks", JSON.stringify(tasks));
   }
 
