@@ -38,13 +38,22 @@ function displayPageTitle(title) {
   content.appendChild(contentTitle);
 }
 
-function displayAllTasks(tasks) {
+function displayAllTasks(tasks, title) {
   const itemsContainer = document.createElement("div");
   itemsContainer.classList.add("items-container");
-  tasks.forEach((task) => {
-    itemsContainer.appendChild(Task.display(task));
-  });
-  content.appendChild(itemsContainer);
+  if (title === "Home") {
+    tasks.forEach((task) => {
+      itemsContainer.appendChild(Task.display(task));
+      content.appendChild(itemsContainer);
+    });
+  } else {
+    tasks.forEach((task) => {
+      if (task.project === title) {
+        itemsContainer.appendChild(Task.display(task));
+        content.appendChild(itemsContainer);
+      }
+    });
+  }
 
   // Assign buttons after each display
   const deleteTaskButtons = document.querySelectorAll(".delete-item-button");
@@ -107,6 +116,13 @@ function displayAllProjects(projects) {
       addProjectContainer.classList.toggle("hidden");
       loadPage();
     }
+  });
+
+  const projectButtons = document.querySelectorAll(".project-button");
+  projectButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      loadPage(button.id);
+    });
   });
 }
 

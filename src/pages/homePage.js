@@ -7,9 +7,9 @@ import {
 import { tasks } from "../modules/itemModule";
 import { projects } from "../modules/projectModule";
 
-function displayHomePage() {
-  displayPageTitle("Home");
-  displayAllTasks(tasks);
+function displayHomePage(title) {
+  displayPageTitle(title);
+  displayAllTasks(tasks, title);
   displayAllProjects(projects);
   populateProjectSelectForm(projects);
 }

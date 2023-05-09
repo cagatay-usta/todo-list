@@ -1,9 +1,9 @@
 import displayHomePage from "../pages/homePage";
 import { clearPageContent } from "./DomModule";
 
-function loadPage() {
+function loadPage(title = "Home") {
   clearPageContent();
-  displayHomePage();
+  displayHomePage(title);
 }
 
 export default loadPage;
