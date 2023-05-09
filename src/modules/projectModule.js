@@ -11,6 +11,14 @@ export default class Project {
     Project.storeAllProjects();
   }
 
+  static remove(project) {
+    const projectIndex = projects.indexOf(project);
+    if (projectIndex > -1) {
+      projects.splice(projectIndex, 1);
+    }
+    Project.storeAllProjects();
+  }
+
   static storeAllProjects() {
     if (window.localStorage.getItem("localProjects")) {
       window.localStorage.removeItem("localProjects");
@@ -27,5 +35,5 @@ export default class Project {
   }
 }
 
-const projects = Project.retrieveAllItems() || ["Home", "New Project", "About"];
+const projects = Project.retrieveAllItems() || ["Home", "About", "New Project"];
 export { projects };

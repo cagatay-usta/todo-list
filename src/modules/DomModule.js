@@ -59,8 +59,27 @@ function displayAllTasks(tasks) {
 }
 
 function displayAllProjects(projects) {
+  // clean first if there is any present
+  while (menuContainer.firstChild) {
+    menuContainer.removeChild(menuContainer.lastChild);
+  }
+
   projects.forEach((project) => {
     menuContainer.appendChild(Project.display(project));
+  });
+
+  const addProjectButton = document.getElementById("NewProject");
+  const addProjectContainer = document.querySelector(".add-project-container");
+  const projectFormCloseButton = document.getElementById(
+    "project-form-close-button"
+  );
+
+  projectFormCloseButton.addEventListener("click", () => {
+    addProjectContainer.classList.toggle("hidden");
+  });
+
+  addProjectButton.addEventListener("click", () => {
+    addProjectContainer.classList.toggle("hidden");
   });
 }
 
@@ -80,22 +99,27 @@ function addNewTask() {
   const addTaskDueDate = document.getElementById("date-form-input");
   const addTaskTitle = document.getElementById("title-form-input");
 
-  // eslint-disable-next-line no-unused-vars
-  const addedTask = new Task(
-    addTaskTitle.value,
-    addTaskDueDate.value,
-    " ",
-    projectFormInput.value
-  );
+  if (addTaskTitle.value && addTaskDueDate.value && projectFormInput.value) {
+    // eslint-disable-next-line no-unused-vars
+    const addedTask = new Task(
+      addTaskTitle.value,
+      addTaskDueDate.value,
+      " ",
+      projectFormInput.value
+    );
 
-  loadPage();
+    loadPage();
+    return true;
+  }
+  return false;
 }
 
 addTaskButton.addEventListener("click", displayAddForm);
 addTaskFormButton.addEventListener("click", () => {
-  displayAddForm();
-  addNewTask();
-  loadPage();
+  if (addNewTask()) {
+    displayAddForm();
+    loadPage();
+  }
 });
 
 export {
