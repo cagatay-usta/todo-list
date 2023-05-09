@@ -36,8 +36,7 @@ export default class Project {
 }
 
 const projects = Project.retrieveAllItems() || [
-  { name: "Home" },
-  { name: "About" },
-  { name: "New Project" },
+  { name: "Work" },
+  { name: "Study" },
 ];
 export { projects };

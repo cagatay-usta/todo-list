@@ -74,15 +74,18 @@ function addNewProject() {
 
 function displayAllProjects(projects) {
   // clean first if there is any present
-  while (menuContainer.firstChild) {
-    menuContainer.removeChild(menuContainer.lastChild);
+  const menuProjectsContainer = document.querySelector(
+    ".menu-projects-container"
+  );
+  while (menuProjectsContainer.firstChild) {
+    menuProjectsContainer.removeChild(menuProjectsContainer.lastChild);
   }
 
   projects.forEach((project) => {
-    menuContainer.appendChild(Project.display(project));
+    menuProjectsContainer.appendChild(Project.display(project));
   });
 
-  const addProjectButton = document.getElementById("New Project");
+  const addProjectButton = document.querySelector(".menu-new-project-button");
   const addProjectContainer = document.querySelector(".add-project-container");
   const projectFormCloseButton = document.getElementById(
     "project-form-close-button"
@@ -118,6 +121,20 @@ function displayAddForm() {
   addTaskForm.classList.toggle("hidden");
 }
 
+function populateProjectSelectForm(projects) {
+  const projectFormInput = document.getElementById("project-form-input");
+  // clear first to prevent duplicates
+  while (projectFormInput.firstChild) {
+    projectFormInput.removeChild(projectFormInput.lastChild);
+  }
+  projects.forEach((project) => {
+    const option = document.createElement("option");
+    option.value = project.name;
+    option.textContent = project.name;
+    projectFormInput.appendChild(option);
+  });
+}
+
 function addNewTask() {
   const projectFormInput = document.getElementById("project-form-input");
   const addTaskDueDate = document.getElementById("date-form-input");
@@ -151,4 +168,5 @@ export {
   displayPageTitle,
   clearPageContent,
   displayAllProjects,
+  populateProjectSelectForm,
 };
