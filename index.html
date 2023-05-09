@@ -15,11 +15,7 @@
       rel="preconnect"
       href="https://fonts.googleapis.com"
     />
-    <link
-      rel="preconnect"
-      href="https://fonts.gstatic.com"
-      crossorigin
-    />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Handlee&display=swap"
       rel="stylesheet"
@@ -29,31 +25,25 @@
   <body>
     <header>
       <div class="header-container">
-        <span class="material-symbols-outlined logo">
-          cleaning_bucket
-        </span>
+        <span class="material-symbols-outlined logo"> cleaning_bucket </span>
         <div class="title">doBucket</div>
-        <span class="material-symbols-outlined menu" id="menu">
-          menu
-        </span>
+        <span class="material-symbols-outlined menu" id="menu"> menu </span>
       </div>
     </header>
 
     <main>
       <div class="content" id="content"></div>
-      <span class="material-symbols-outlined" id="add-task">
-        add_circle
-      </span>
+      <span class="material-symbols-outlined" id="add-task"> add_circle </span>
 
       <div class="add-task-container hidden">
         <form action="#" id="add-task-form">
           <div class="title-input form-item">
             <label for="title-form-input">Title</label>
-            <input type="text" id="title-form-input">
+            <input type="text" id="title-form-input" />
           </div>
           <div class="date-input form-item">
             <label for="date-form-input">Date</label>
-            <input type="date" name="date" id="date-form-input">
+            <input type="date" name="date" id="date-form-input" />
           </div>
           <div class="project-input form-item">
             <label for="project-form-input">Project</label>
@@ -69,8 +59,25 @@
         </form>
       </div>
 
-      <div class="menu-container menu-open">
+      <div class="add-project-container hidden">
+        <form action="#" id="add-project-form">
+          <span
+            class="material-symbols-outlined"
+            id="project-form-close-button"
+          >
+            close
+          </span>
+          <div class="project-title-input form-item">
+            <label for="project-title-form-input">Project Title</label>
+            <input type="text" id="project-title-input" />
+          </div>
+          <span class="material-symbols-outlined" id="project-form-add-button">
+            add_circle
+          </span>
+        </form>
       </div>
+
+      <div class="menu-container"></div>
     </main>
   </body>
 </html>
