@@ -58,6 +58,20 @@ function displayAllTasks(tasks) {
   });
 }
 
+function addNewProject() {
+  const projectFormTitleInput = document.getElementById(
+    "project-title-form-input"
+  );
+  if (projectFormTitleInput.value) {
+    // eslint-disable-next-line no-unused-vars
+    const addedProject = new Project(projectFormTitleInput.value);
+    projectFormTitleInput.value = "";
+    loadPage();
+    return true;
+  }
+  return false;
+}
+
 function displayAllProjects(projects) {
   // clean first if there is any present
   while (menuContainer.firstChild) {
@@ -68,7 +82,7 @@ function displayAllProjects(projects) {
     menuContainer.appendChild(Project.display(project));
   });
 
-  const addProjectButton = document.getElementById("NewProject");
+  const addProjectButton = document.getElementById("New Project");
   const addProjectContainer = document.querySelector(".add-project-container");
   const projectFormCloseButton = document.getElementById(
     "project-form-close-button"
@@ -80,6 +94,16 @@ function displayAllProjects(projects) {
 
   addProjectButton.addEventListener("click", () => {
     addProjectContainer.classList.toggle("hidden");
+  });
+
+  const addProjectFormButton = document.getElementById(
+    "project-form-add-button"
+  );
+  addProjectFormButton.addEventListener("click", () => {
+    if (addNewProject()) {
+      addProjectContainer.classList.toggle("hidden");
+      loadPage();
+    }
   });
 }
 

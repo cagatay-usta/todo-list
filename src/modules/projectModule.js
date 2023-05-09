@@ -7,7 +7,7 @@ export default class Project {
   }
 
   add() {
-    projects.push(this);
+    projects.splice(-1, 0, this);
     Project.storeAllProjects();
   }
 
@@ -35,5 +35,9 @@ export default class Project {
   }
 }
 
-const projects = Project.retrieveAllItems() || ["Home", "About", "New Project"];
+const projects = Project.retrieveAllItems() || [
+  { name: "Home" },
+  { name: "About" },
+  { name: "New Project" },
+];
 export { projects };

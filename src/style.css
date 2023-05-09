@@ -172,10 +172,11 @@ input {
     position: fixed;
     align-self: center;
     transition: transform ease 0.5s;
+    z-index: 1;
 }
 
 #add-project-form {
-    background-color: var(--brand-color);
+    background-color: #1fa48c;
     color: white;
     font-size: 24px;
     font-weight: 600;
