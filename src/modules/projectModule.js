@@ -11,8 +11,10 @@ export default class Project {
     Project.storeAllProjects();
   }
 
-  static remove(project) {
-    const projectIndex = projects.indexOf(project);
+  static remove(projectName) {
+    const projectIndex = projects.findIndex(
+      (project) => project.name === projectName
+    );
     if (projectIndex > -1) {
       projects.splice(projectIndex, 1);
     }

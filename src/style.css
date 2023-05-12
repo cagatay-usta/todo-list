@@ -67,6 +67,19 @@ main {
     flex-direction: column;
 }
 
+/* page title */
+
+.content-title-container {
+    display: flex;
+    justify-content: baseline;
+    align-items: baseline;
+    gap: 1rem;
+}
+
+.delete-project-button {
+    font-size: 1.5rem;
+}
+
 /* menu and buttons */
 .menu-container {
     background-color: var(--brand-color);

@@ -32,10 +32,29 @@ function doneClickHandler(button) {
 }
 
 function displayPageTitle(title) {
+  const titleContainer = document.createElement("div");
+  titleContainer.classList.add("content-title-container");
   const contentTitle = document.createElement("div");
   contentTitle.classList.add("content-title");
   contentTitle.innerHTML = title;
-  content.appendChild(contentTitle);
+  titleContainer.appendChild(contentTitle);
+  if (title !== "Home") {
+    // if it's not home page, add delete project button
+    const deleteProjectButton = document.createElement("span");
+    deleteProjectButton.classList.add("material-symbols-outlined");
+    deleteProjectButton.classList.add("delete-project-button");
+    deleteProjectButton.innerHTML = "delete";
+    titleContainer.appendChild(deleteProjectButton);
+
+    // add delete project funtionality
+    deleteProjectButton.addEventListener("click", () => {
+      Project.remove(
+        deleteProjectButton.parentNode.firstElementChild.textContent
+      );
+      loadPage();
+    });
+  }
+  content.appendChild(titleContainer);
 }
 
 function displayAllTasks(tasks, title) {
