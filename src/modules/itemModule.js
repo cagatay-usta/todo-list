@@ -30,6 +30,14 @@ export default class Task {
     Task.storeAllItems();
   }
 
+  static edit(id, newTitle) {
+    const taskIndex = tasks.findIndex((task) => task.id === Number(id));
+    if (taskIndex > -1) {
+      tasks[taskIndex].title = newTitle;
+    }
+    Task.storeAllItems();
+  }
+
   static toggleDone(id) {
     const taskIndex = tasks.findIndex((task) => task.id === Number(id));
     if (taskIndex > -1) {

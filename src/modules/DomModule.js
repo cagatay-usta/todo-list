@@ -31,6 +31,27 @@ function doneClickHandler(button) {
   });
 }
 
+function editClickHandler(button) {
+  button.addEventListener("click", (e) => {
+    const taskContainer = e.target.closest(".item-container");
+    const taskTitle = taskContainer.firstElementChild;
+    taskTitle.contentEditable = "true";
+    taskTitle.focus();
+    // save edit and remove editable when out of focus
+    taskTitle.addEventListener("blur", () => {
+      taskTitle.contentEditable = "false";
+      Task.edit(taskContainer.id, taskTitle.textContent);
+    });
+    // also for enter key
+    taskTitle.addEventListener("keypress", (event) => {
+      if (event.key === "Enter") {
+        taskTitle.contentEditable = "false";
+        Task.edit(taskContainer.id, taskTitle.textContent);
+      }
+    });
+  });
+}
+
 function displayPageTitle(title) {
   const titleContainer = document.createElement("div");
   titleContainer.classList.add("content-title-container");
@@ -83,6 +104,11 @@ function displayAllTasks(tasks, title) {
   const completeTaskButtons = document.querySelectorAll(".done-button");
   completeTaskButtons.forEach((button) => {
     doneClickHandler(button);
+  });
+
+  const editTaskButtons = document.querySelectorAll(".edit-item-button");
+  editTaskButtons.forEach((button) => {
+    editClickHandler(button);
   });
 }
 

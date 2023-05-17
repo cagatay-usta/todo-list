@@ -7,7 +7,7 @@ function createItemComponent(task) {
 
         <div class="item-title ${isDone}">${task.title}</div>
         <div class="item-icons">
-        <span class="material-symbols-outlined">
+        <span class="material-symbols-outlined edit-item-button">
             edit_note
         </span>
         <span class="material-symbols-outlined delete-item-button"> delete </span>
