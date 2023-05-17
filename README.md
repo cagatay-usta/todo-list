@@ -1,26 +1,18 @@
-
-
 # Description
 
 doBucket is a task management web application that helps you stay organized and motivated to complete your tasks on time. It has a unique twist - tasks are automatically deleted on their due date, providing an extra incentive to complete them before time runs out. With doBucket, you can effectively manage your tasks and ensure that nothing falls through the cracks. It was built as a homework project from The Odin Project, using HTML, CSS, JavaScript, and Webpack as technologies, and used airbnb style guide with ESLint.
 
-
-
 Check out the live [preview here](https://cagatay-usta.github.io/todo-list/)
-
- 
-
 
 <br>
 
 # Features
 
-- Add, edit(Soon), and remove tasks
+- Add, edit, and remove tasks
 - Task categorization
 - User-friendly interface
 - Responsive design for both desktop and mobile devices
 - Automatic task deletion on due date (Soon)
-
 
 <br>
 
@@ -58,23 +50,23 @@ If you rather want to check the source code and modify it:
 
 # Story Behind the Build
 
-I experienced from my previous projects that having a rough plan at hand before writing a single line of code really helps with complexity and refactoring. However, I also realized that I might have spent a bit too much time on designing visuals before so I went for a rough sketch for this one. 
+I experienced from my previous projects that having a rough plan at hand before writing a single line of code really helps with complexity and refactoring. However, I also realized that I might have spent a bit too much time on designing visuals before so I went for a rough sketch for this one.
 
-Also doing the project while reading "Refactoring UI" have been a very fun and informative experience and I tried to incorporate the advice on it such as "start with a feauture first" into my design. 
+Also doing the project while reading "Refactoring UI" have been a very fun and informative experience and I tried to incorporate the advice on it such as "start with a feauture first" into my design.
 
-First protype on Figma: 
+First protype on Figma:
 
 ![figma](img/dobucketfigma.png)
 
-I also went with the same planning and structure mindset for the code. In this project, I utilized the GitHub Projects tool for effective project management and streamlined task tracking. This allowed me to stay organized, prioritize tasks, and collaborate more efficiently. 
+I also went with the same planning and structure mindset for the code. In this project, I utilized the GitHub Projects tool for effective project management and streamlined task tracking. This allowed me to stay organized, prioritize tasks, and collaborate more efficiently.
 
 Here is a screenshot from my very first issues:
-You can also see how it's going now by [clicking here.](https://github.com/users/cagatay-usta/projects/2/views/1) 
+You can also see how it's going now by [clicking here.](https://github.com/users/cagatay-usta/projects/2/views/1)
 ![ghprojects](img/dobucketplanning.png)
 
 Furthermore, I embraced modern JavaScript practices by leveraging ES6 modules. The use of modules enhanced the modularity of the codebase and facilitated better code organization. Additionally, I integrated ESLint into my development process to ensure code consistency and adhere to best practices. These tools and practices collectively contributed to the overall quality of the codebase.
 
-While there is always room for improvement, the lessons learned from previous projects, along with the adoption of GitHub Projects, Figma for prototyping, ES6 modules, and ESLint, have laid the foundation for a more structured and efficient development process. 
+While there is always room for improvement, the lessons learned from previous projects, along with the adoption of GitHub Projects, Figma for prototyping, ES6 modules, and ESLint, have laid the foundation for a more structured and efficient development process.
 
 # Contributing
 
