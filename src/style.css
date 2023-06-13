@@ -257,6 +257,7 @@ input {
 
 .item-container {
     display: flex;
+    gap: 1rem;
     justify-content: space-between;
     flex-wrap: wrap;
     font-size: 20px;
@@ -272,4 +273,6 @@ input {
     margin-left: auto;
     gap: 1rem;
 }
+
+
 
